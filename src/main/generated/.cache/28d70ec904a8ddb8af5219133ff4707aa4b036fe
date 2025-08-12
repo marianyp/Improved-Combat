@@ -1,0 +1,7 @@
+// 1.21.8	-999999999-01-01T00:00:00	Improved Combat/Tags for minecraft:item
+06baa49953c7b3c9e3e7bced0be324a733a9f1fa data/improvedcombat/tags/item/enchantable/archery.json
+47510f6d986d3ee282ee7e7bbd7a3dd62ecdda6a data/improvedcombat/tags/item/enchantable/knockback.json
+47510f6d986d3ee282ee7e7bbd7a3dd62ecdda6a data/improvedcombat/tags/item/enchantable/looting.json
+e7ac4fd8db27cfaef7caac56bfc2cd286d7260a9 data/improvedcombat/tags/item/enchantable/loyalty.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/improvedcombat/tags/item/right_facing.json
+58b92ae412db10a7041d5ae649a445f3ac2e4a13 data/minecraft/tags/item/enchantable/fire_aspect.json

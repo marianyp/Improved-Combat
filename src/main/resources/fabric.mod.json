@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "improvedcombat",
+	"version": "${version}",
+	"name": "Improved Combat",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/improvedcombat/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.mariany.improvedcombat.ImprovedCombat"
+		],
+		"client": [
+			"dev.mariany.improvedcombat.client.ImprovedCombatClient"
+		],
+		"fabric-datagen": [
+			"dev.mariany.improvedcombat.ImprovedCombatDataGenerator"
+		]
+	},
+	"mixins": [
+		"improvedcombat.mixins.json"
+	],
+	"accessWidener": "improvedcombat.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

@@ -1,0 +1,9 @@
+{
+  "enchantment.improvedcombat.hurl": "Hurl",
+  "entity.improvedcombat.thrown_axe": "Thrown Axe",
+  "tag.item.improvedcombat.enchantable/archery": "Archery Enchantable",
+  "tag.item.improvedcombat.enchantable/knockback": "Knockback Enchantable",
+  "tag.item.improvedcombat.enchantable/looting": "Looting Enchantable",
+  "tag.item.improvedcombat.enchantable/loyalty": "Loyalty Enchantable",
+  "tag.item.improvedcombat.right_facing": "Right Facing"
+}

@@ -1,0 +1,4 @@
+// 1.21.8	-999999999-01-01T00:00:00	Improved Combat/Tags for minecraft:damage_type
+c6b4ff37feb12289c7dbff9da32dd6a8a0e89845 data/minecraft/tags/damage_type/always_kills_armor_stands.json
+c6b4ff37feb12289c7dbff9da32dd6a8a0e89845 data/minecraft/tags/damage_type/is_projectile.json
+c6b4ff37feb12289c7dbff9da32dd6a8a0e89845 data/minecraft/tags/damage_type/panic_causes.json
