@@ -3,8 +3,16 @@ package dev.mariany.improvedcombat.entity.custom;
 import dev.mariany.improvedcombat.entity.ICEntityTypes;
 import dev.mariany.improvedcombat.entity.damage.ICDamageTypes;
 import dev.mariany.improvedcombat.sound.ICSoundEvents;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.EnchantmentEffectComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.effect.EnchantmentEntityEffect;
+import net.minecraft.enchantment.effect.TargetedEnchantmentEffect;
+import net.minecraft.enchantment.effect.entity.IgniteEnchantmentEffect;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -19,6 +27,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
@@ -31,6 +40,8 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ThrownAxeEntity extends PersistentProjectileEntity {
     public static final String SLOT_KEY = "Slot";
@@ -47,7 +58,7 @@ public class ThrownAxeEntity extends PersistentProjectileEntity {
 
     private int slot;
     private long spinDuration;
-    private boolean dealtDamage = false;
+    private boolean dealtDamage;
     private int returnTimer;
 
     public ThrownAxeEntity(EntityType<? extends ThrownAxeEntity> entityType, World world) {
@@ -91,6 +102,10 @@ public class ThrownAxeEntity extends PersistentProjectileEntity {
 
         if (this.inGroundTime > 4) {
             this.dealtDamage = true;
+        }
+
+        if (this.getFireTicks() <= 1 && this.isFlameEnchanted()) {
+            this.setFireTicks(5);
         }
 
         Entity entity = this.getOwner();
@@ -141,6 +156,32 @@ public class ThrownAxeEntity extends PersistentProjectileEntity {
 
     public long getSpinDuration() {
         return this.spinDuration;
+    }
+
+    private boolean isFlameEnchanted() {
+        if (!this.getItemStack().isEmpty()) {
+            ItemEnchantmentsComponent itemEnchantmentsComponent = this.getItemStack().get(
+                    DataComponentTypes.ENCHANTMENTS
+            );
+
+            if (itemEnchantmentsComponent != null && !itemEnchantmentsComponent.isEmpty()) {
+                for (
+                        Object2IntMap.Entry<RegistryEntry<Enchantment>> entry :
+                        itemEnchantmentsComponent.getEnchantmentEntries()
+                ) {
+                    List<TargetedEnchantmentEffect<EnchantmentEntityEffect>> postAttackEffects = entry.getKey().value()
+                            .getEffect(EnchantmentEffectComponentTypes.POST_ATTACK);
+
+                    for (TargetedEnchantmentEffect<EnchantmentEntityEffect> effect : postAttackEffects) {
+                        if (effect.effect() instanceof IgniteEnchantmentEffect) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     @Override
