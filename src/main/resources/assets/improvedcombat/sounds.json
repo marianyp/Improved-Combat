@@ -1,0 +1,84 @@
+{
+  "item.axe.hit": {
+    "subtitle": "subtitles.item.improvedcombat.axe.hit",
+    "sounds": [
+      "minecraft:item/trident/pierce1",
+      "minecraft:item/trident/pierce2",
+      "minecraft:item/trident/pierce3"
+    ]
+  },
+  "item.axe.hit_ground": {
+    "subtitle": "subtitles.item.improvedcombat.axe.hit_ground",
+    "sounds": [
+      {
+        "name": "minecraft:item/trident/ground_impact1",
+        "volume": 0.9
+      },
+      {
+        "name": "minecraft:item/trident/ground_impact2",
+        "volume": 0.9
+      },
+      {
+        "name": "minecraft:item/trident/ground_impact3",
+        "volume": 0.9
+      },
+      {
+        "name": "minecraft:item/trident/ground_impact4",
+        "volume": 0.9
+      }
+    ]
+  },
+  "item.axe.return": {
+    "subtitle": "subtitles.item.improvedcombat.axe.return",
+    "sounds": [
+      {
+        "name": "minecraft:item/trident/return1",
+        "volume": 0.8
+      },
+      {
+        "name": "minecraft:item/trident/return2",
+        "volume": 0.8
+      },
+      {
+        "name": "minecraft:item/trident/return2",
+        "pitch": 0.8,
+        "volume": 0.8
+      },
+      {
+        "name": "minecraft:item/trident/return2",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "minecraft:item/trident/return2",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "minecraft:item/trident/return3",
+        "volume": 0.8
+      },
+      {
+        "name": "minecraft:item/trident/return3",
+        "pitch": 0.8,
+        "volume": 0.8
+      },
+      {
+        "name": "minecraft:item/trident/return3",
+        "pitch": 0.8,
+        "volume": 0.8
+      },
+      {
+        "name": "minecraft:item/trident/return3",
+        "pitch": 1.2,
+        "volume": 0.8
+      }
+    ]
+  },
+  "item.axe.throw": {
+    "subtitle": "subtitles.item.improvedcombat.axe.throw",
+    "sounds": [
+      "minecraft:random/bow"
+    ]
+  }
+}

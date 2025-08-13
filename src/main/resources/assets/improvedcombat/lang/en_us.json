@@ -1,6 +1,13 @@
 {
   "enchantment.improvedcombat.hurl": "Hurl",
+  "enchantment.improvedcombat.hurl.desc": "Allows the axe to be thrown.",
   "entity.improvedcombat.thrown_axe": "Thrown Axe",
+  "death.attack.improvedcombat.axe": "%1$s was cleaved by %2$s",
+  "death.attack.improvedcombat.axe.item": "%1$s was cleaved by %2$s with %3$s",
+  "subtitles.item.improvedcombat.axe.hit": "Axe cleaves",
+  "subtitles.item.improvedcombat.axe.hit_ground": "Axe hits ground",
+  "subtitles.item.improvedcombat.axe.return": "Axe returns",
+  "subtitles.item.improvedcombat.axe.throw": "Axe thrown",
   "tag.item.improvedcombat.enchantable/archery": "Archery Enchantable",
   "tag.item.improvedcombat.enchantable/knockback": "Knockback Enchantable",
   "tag.item.improvedcombat.enchantable/looting": "Looting Enchantable",

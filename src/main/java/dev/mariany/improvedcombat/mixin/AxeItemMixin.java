@@ -2,6 +2,7 @@ package dev.mariany.improvedcombat.mixin;
 
 import dev.mariany.improvedcombat.component.ICEnchantmentEffectComponentTypes;
 import dev.mariany.improvedcombat.entity.custom.ThrownAxeEntity;
+import dev.mariany.improvedcombat.sound.ICSoundEvents;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,7 +16,6 @@ import net.minecraft.item.ProjectileItem;
 import net.minecraft.item.consume.UseAction;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -113,7 +113,7 @@ public class AxeItemMixin extends Item implements ProjectileItem {
                 world.playSoundFromEntity(
                         null,
                         thrownAxeEntity,
-                        SoundEvents.ITEM_TRIDENT_THROW.value(),
+                        ICSoundEvents.ITEM_AXE_THROW,
                         SoundCategory.PLAYERS,
                         1F,
                         1F

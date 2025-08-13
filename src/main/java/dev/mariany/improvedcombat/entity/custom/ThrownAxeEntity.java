@@ -2,6 +2,7 @@ package dev.mariany.improvedcombat.entity.custom;
 
 import dev.mariany.improvedcombat.entity.ICEntityTypes;
 import dev.mariany.improvedcombat.entity.damage.ICDamageTypes;
+import dev.mariany.improvedcombat.sound.ICSoundEvents;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -21,7 +22,6 @@ import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.storage.ReadView;
 import net.minecraft.storage.WriteView;
 import net.minecraft.util.hit.BlockHitResult;
@@ -80,7 +80,7 @@ public class ThrownAxeEntity extends PersistentProjectileEntity {
 
     @Override
     protected SoundEvent getHitSound() {
-        return SoundEvents.ITEM_TRIDENT_HIT_GROUND;
+        return ICSoundEvents.ITEM_AXE_HIT_GROUND;
     }
 
     @Override
@@ -120,7 +120,7 @@ public class ThrownAxeEntity extends PersistentProjectileEntity {
                 this.setVelocity(this.getVelocity().multiply(0.95).add(offset.normalize().multiply(multiplier)));
 
                 if (this.returnTimer == 0) {
-                    this.playSound(SoundEvents.ITEM_TRIDENT_RETURN, 10F, 1F);
+                    this.playSound(ICSoundEvents.ITEM_AXE_RETURN, 10F, 1F);
                 }
 
                 this.returnTimer++;
@@ -197,7 +197,7 @@ public class ThrownAxeEntity extends PersistentProjectileEntity {
 
         this.deflect(ProjectileDeflection.SIMPLE, victim, this.getOwner(), false);
         this.setVelocity(this.getVelocity().multiply(0.02, 0.2, 0.02));
-        this.playSound(SoundEvents.ITEM_TRIDENT_HIT, 1F, 1F);
+        this.playSound(ICSoundEvents.ITEM_AXE_HIT, 1F, 1F);
     }
 
     @Override

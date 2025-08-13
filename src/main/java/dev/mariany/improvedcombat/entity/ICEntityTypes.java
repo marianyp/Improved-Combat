@@ -28,10 +28,14 @@ public class ICEntityTypes {
         return register(keyOf(id), type);
     }
 
-    private static <T extends Entity> EntityType<T> register(RegistryKey<EntityType<?>> key, EntityType.Builder<T> type) {
+    private static <T extends Entity> EntityType<T> register(
+            RegistryKey<EntityType<?>> key,
+            EntityType.Builder<T> type
+    ) {
         return Registry.register(Registries.ENTITY_TYPE, key, type.build(key));
     }
 
     public static void bootstrap() {
+        ImprovedCombat.LOGGER.info("Registering Entities for " + ImprovedCombat.MOD_ID);
     }
 }

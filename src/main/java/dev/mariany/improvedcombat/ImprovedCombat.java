@@ -2,6 +2,7 @@ package dev.mariany.improvedcombat;
 
 import dev.mariany.improvedcombat.component.ICEnchantmentEffectComponentTypes;
 import dev.mariany.improvedcombat.entity.ICEntityTypes;
+import dev.mariany.improvedcombat.sound.ICSoundEvents;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -17,7 +18,8 @@ public class ImprovedCombat implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ICEntityTypes.bootstrap();
+        ICSoundEvents.bootstrap();
         ICEnchantmentEffectComponentTypes.bootstrap();
+        ICEntityTypes.bootstrap();
     }
 }
